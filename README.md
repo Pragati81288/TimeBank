@@ -1,63 +1,251 @@
-# TimeBank
+# ⏳ TimeBank – Student Skill Exchange Platform
 
-TimeBank is a student skill-exchange platform. Students teach what they know and learn what they need, paying and earning time credits: one credit per hour taught, one credit per hour learned.
+### Exchange Skills. Share Knowledge. Grow Together.
 
-- `src/` - React frontend (Vite, Tailwind CSS)
-- `backend/` - Java 17 + Spring Boot REST API with an H2 database
+## 1. Project Overview
 
-## One-time setup (Windows 11)
+TimeBank is a student-oriented skill exchange platform developed using Java and modern web technologies.
 
-1. **Install Java 17.** Download the Temurin 17 (LTS) Windows installer from https://adoptium.net. In the installer, turn on "Set JAVA_HOME variable" and "Add to PATH".
-2. **Install Node.js (LTS)** from https://nodejs.org.
-3. Open **PowerShell** and go to the project folder (the one that contains `package.json`):
+The main idea behind TimeBank is simple: students can teach their skills to other students and, in return, learn something new without necessarily exchanging money.
 
-   ```powershell
-   cd path\to\TimeBank
-   ```
+Instead of paying for learning sessions, users exchange their time and knowledge through a credit-based system.
 
-You do not need to install Maven. The included Maven Wrapper downloads it automatically the first time.
+For example:
+- A student who knows Java can teach another student.
+- In exchange, that student can learn graphic designing.
+- Both students benefit by sharing their knowledge and time.
 
-## Start the backend
+TimeBank encourages collaborative learning, peer-to-peer education and skill development.
 
-Open a PowerShell window in the project folder and run:
+## 2. Problem Statement
 
-```powershell
+Many students possess valuable skills but lack opportunities to share them or learn from others.
+
+Traditional learning platforms often require monetary payments, subscriptions or paid courses.
+
+There is a need for a student-friendly platform where learners can exchange knowledge, connect with peers and develop practical skills without depending entirely on money.
+
+TimeBank aims to address this problem through a time-based skill exchange system.
+
+## 3. Project Objectives
+
+- Create a platform for peer-to-peer skill exchange.
+- Encourage collaborative learning among students.
+- Allow students to list the skills they can teach.
+- Help students discover people who can teach the skills they want to learn.
+- Introduce a credit-based exchange mechanism.
+- Provide a structured process for requesting, accepting and scheduling learning sessions.
+- Build a user-friendly and interactive interface.
+
+## 4. Key Features
+
+### User Authentication
+Users can register and log in to their accounts.
+
+### User Profiles and Avatars
+Users can personalize their profiles using different avatar options.
+
+### Skill Management
+Students can add and manage the skills they are willing to teach.
+
+### Skill Matching
+Users can explore available skills and find potential learning partners.
+
+### Exchange Requests
+Users can send requests to other students for skill exchange sessions.
+
+### Request Management
+Users can view incoming requests and accept or reject them.
+
+### Credit-Based Wallet
+The platform uses time credits to manage skill exchanges.
+
+New accounts receive 10 welcome credits.
+
+### Session Scheduling
+Once an exchange request is accepted, users can arrange a suitable time for their learning session.
+
+### Ratings and Reviews
+Users can rate and review completed exchanges.
+
+### Notifications
+Users can view notifications related to their activities.
+
+## 5. How TimeBank Works
+
+The platform follows a simple workflow:
+
+1. A student registers or logs into TimeBank.
+2. The student creates a profile.
+3. The student adds skills they can teach.
+4. Other students explore available skills.
+5. A student sends an exchange request.
+6. The receiving student reviews and accepts or rejects the request.
+7. Once accepted, both students can coordinate a session.
+8. They conduct their learning session.
+9. The exchange can be completed and rated.
+
+The platform provides the infrastructure for arranging learning exchanges.
+
+## 6. Technologies Used
+
+### Backend
+- Java 17
+- Spring Boot
+- Spring MVC
+- Maven
+- REST APIs
+
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- HTML
+- CSS
+
+### Development Tools
+- IntelliJ IDEA / VS Code
+- Git
+- GitHub
+- GitHub Desktop
+- Node.js
+- Maven Wrapper
+
+## 7. Project Architecture
+
+TimeBank follows a frontend-backend architecture.
+
+**Frontend:**
+The React application provides the user interface and allows students to interact with the platform.
+
+**Backend:**
+The Java Spring Boot application handles application logic, user operations, skill exchanges, wallet operations and API requests.
+
+**Communication:**
+The frontend communicates with the backend through REST API endpoints.
+
+## 8. Project Structure
+
+```text
+TimeBank/
+│
+├── backend/
+│   ├── src/
+│   ├── pom.xml
+│   └── Maven Wrapper
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   └── types.ts
+│
+├── .bolt/
+├── package.json
+├── package-lock.json
+├── index.html
+├── vite.config.ts
+├── tailwind.config.js
+├── tsconfig.json
+├── eslint.config.js
+└── README.md
+```
+
+## 9. Installation and Setup
+
+### Prerequisites
+
+Install the following:
+
+- Java Development Kit 17
+- Node.js LTS
+- npm
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/Pragati81288/TimeBank.git
+```
+
+### Step 2: Open the Project
+
+```bash
+cd TimeBank
+```
+
+### Step 3: Start the Backend
+
+Open a terminal:
+
+```bash
 cd backend
 .\mvnw.cmd spring-boot:run
 ```
 
-The first run downloads dependencies and can take a few minutes. Wait for a line that says `Started TimeBankApplication`. Leave this window open. The API runs at `http://localhost:8080/api`.
+Wait until the application starts successfully.
 
-## Start the frontend
+The backend runs on:
 
-Open a second PowerShell window in the project folder and run:
+```text
+http://localhost:8080
+```
 
-```powershell
+### Step 4: Start the Frontend
+
+Open a second terminal in the main TimeBank project folder.
+
+Run:
+
+```bash
 npm install
 npm run dev
 ```
 
-Then open `http://localhost:5173` in your browser. Leave this window open too.
+The frontend runs on:
 
-## Demo accounts
+```text
+http://localhost:5173
+```
 
-The database is an in-memory H2 database. It starts with sample students, skills, exchange requests and credits each time the backend starts. Restarting the backend resets the data, and any accounts you registered are removed.
+Open the frontend address in your browser.
 
-All demo accounts use the password `Password123`:
+Keep both terminal windows running while using the application.
 
-- priya@timebank.demo (Java teacher, 4 credits)
-- liam@timebank.demo (design teacher, 3 credits)
-- sofia@timebank.demo (Spanish teacher, 5 credits)
-- arjun@timebank.demo (calculus teacher, 2 credits)
-- emma@timebank.demo (French and photography teacher, 1 credit)
+## 10. Future Scope
 
-You can also create your own account from the sign-up page.
+The project can be extended with the following features:
 
-The H2 database console is at `http://localhost:8080/h2-console` (JDBC URL `jdbc:h2:mem:timebank`, user `sa`, no password).
+- Integrated video calling for online teaching sessions.
+- Real-time chat between students.
+- Live notifications.
+- Calendar integration for scheduling.
+- Improved skill recommendation and matching.
+- Additional learning resources.
+- Mobile application support.
 
-## Troubleshooting
+## 11. Project Outcomes
 
-- **"Cannot reach the TimeBank server"** on the website: the backend window is closed or still starting. Start it and refresh the page.
-- **"Port 8080 was already in use"**: another program uses port 8080. Close it and start the backend again.
-- **`'java' is not recognized`**: Java 17 is not installed or was not added to PATH. Reinstall Temurin 17 with the PATH option turned on, then open a new PowerShell window.
-- **Scripts are blocked in PowerShell**: `.\mvnw.cmd` and `npm` run without changing settings. If PowerShell still blocks `npm`, run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once.
+TimeBank demonstrates how Java-based backend development can be integrated with a modern frontend to create a practical web application.
+
+The project provides experience in:
+
+- Object-oriented programming.
+- Java backend development.
+- Spring Boot application development.
+- REST API integration.
+- Frontend-backend communication.
+- User authentication.
+- Database-oriented application development.
+- Git and GitHub version control.
+
+## 12. Conclusion
+
+TimeBank aims to make learning more collaborative by allowing students to exchange their knowledge and skills.
+
+By combining Java, Spring Boot and modern frontend technologies, the project provides a platform where students can connect, learn and grow together.
+
+**Developed as an academic Java project.**
+
+GitHub Repository:
+
+https://github.com/Pragati81288/TimeBank
